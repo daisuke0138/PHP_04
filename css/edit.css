@@ -1,0 +1,96 @@
+.editarea {
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.searchForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+}
+
+.searchForm input {
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.searchForm button {
+    width: 5vw;
+}
+
+.searchForm label {
+    width: 5vw;
+}
+
+.edit_table {
+    width: 80vw;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.editdata {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.edit_table input{
+    font-size: 1.5rem;
+    width:30vw;
+    border: none;
+}
+
+.edit_table textarea {
+    font-size: 1.5rem;
+    width: 30vw;
+    border: none;
+}
+
+.readimg{
+    width: 30vw;
+    height: 25vh;
+}
+
+
+.result {
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width:38vw;
+}
+
+.selectimg{
+    margin: 0.5rem;
+}
+
+button {
+    margin: 0.5rem;
+    width: 6vw;
+    height: 4vh;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #90d0f7;
+}
+
+
+
+
+

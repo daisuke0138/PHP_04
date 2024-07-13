@@ -1,0 +1,121 @@
+/* body{
+}  */
+fieldset {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 26vw;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.result_table{
+    width: 20vw;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.top_area {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 22vw;
+    text-align: center;
+}
+
+.logindata {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 26vw;
+    text-align: center;
+}
+
+.edit_delete {
+    width: 22vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    }
+
+.logindata input {
+    font-size: 1.5rem;
+    margin: 5px;
+}
+
+.errormesseage{
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.dialogarea{
+    margin: 1rem;
+    outline: auto;
+    padding:1rem;
+    width:20vw;
+    height: 20vh;
+    text-align: center;
+}
+
+button{
+    margin: 0.5rem;
+    width: 8vw;
+    height: 4vw;
+    font-weight: bold;
+}
+
+.button1{
+    margin: 1rem;
+    width: 8vw;
+    height: 4vw;
+    font-size: 1vw;
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: rgb(228, 230, 231);
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #90d0f7;
+}
+
+.generateId{
+    width: 4vw;
+    height: 4vh;
+    background-color: rgb(228, 230, 231);
+    font-size: 1rem;
+    transition-duration: 0.4s;
+    border-radius: 50%;
+}
+
+.submitarea {
+    display: flex;
+    justify-content: center;
+}
+
+.sendbt{
+    margin: 0.5rem;
+    font-weight: bold;
+    font-size: 0.8vw;
+    border-radius: 10%;
+    width: 8vw;
+    height: 2.5vw;
+}
+
+.editbt{
+    display: flex;
+}
+
+.editbt form{
+    margin: 1rem;
+}
