@@ -1,0 +1,53 @@
+body{
+    position: relative;
+}
+
+legend{
+    font-weight: bold;
+}
+
+.login {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.login input {
+    font-size: 1.5rem;
+    margin: 5px;
+}
+
+.errormesseage{
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.button1{
+    margin: 1rem;
+    width: 8vw;
+    height: 4vh;
+    font-size: 1vw;
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: rgb(228, 230, 231);
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #90d0f7;
+}
+
+.submitarea {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,77 @@
+fieldset {
+    width: 80vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.menberimg {
+    height:120px;
+    width:120px;
+}
+
+.table{
+ width: 80vw;
+}
+
+.table th {
+    width: 10vw;
+    height: 1vh;
+}
+
+.table tr {
+    height: 1vh;
+}
+
+.outputarea{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    outline: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2%;
+    width:75vw;
+    height: 80vh;
+}
+
+.header-area{
+    outline: auto;
+    /* text-align: start; */
+    height: 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-area p1 {
+    padding: 0.5rem;
+}
+.header-area p2 {
+    padding: 0.5rem;
+}
+
+
+.output-body{
+    outline: auto;
+    display: flex;
+    height: 92%;
+    width: 100%;
+}
+
+.Document-area {
+    outline: auto;
+    height: 100%;
+    width: 90%;
+}
+
+.Document-theme {
+    outline: auto;
+    height: 100%;
+    width: 10%;
+}

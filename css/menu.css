@@ -1,0 +1,10 @@
+button:hover {
+    background-color: #90d0f7;
+}
+
+button{
+    width: 8vw;
+    height: 4vh;
+    font-weight: bold;
+    margin: 0.5rem;
+}
