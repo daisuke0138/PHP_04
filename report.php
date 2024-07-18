@@ -14,8 +14,8 @@ check_session_id();
 
 </head>
 <body>
+<h2>ようこそ <?= $_SESSION['name'] ?> さん</h2>
 <a href="menberlist.php">一覧画面へ</a>
-
 <!-- 社員情報の検索 -->
 <div class="editarea">
     <!-- 社員情報の表示、編集 -->
@@ -29,6 +29,13 @@ check_session_id();
                 file選択:<input type="file" id="fileInput" name="file" accept=".pdf,.ppt,.pptx">
                 <div id="fileContainer"></div>
             </div>
+          <label for="pullduown">選択してください</label>
+            <select id="pullduown" name="file_value">
+            <option value="上期">上期成果</option>
+            <option value="下期">下期成果</option>
+            </select>
+            <!-- 隠しフィールドを追加してfile_idを送信する -->
+            <input type="hidden" name="file_id" >
             <button type="submit">提出</button>
         </form>
     </div>
