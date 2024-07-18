@@ -6,15 +6,20 @@ check_session_id();
 // DB接続
 $pdo = connect_to_db();
 
+
 // セッションからNoを取得
 $No = $_SESSION['No'];
+$user_id = $_SESSION['id'];
 
-// データ検証
-if (
-  !isset($_FILES['file']) || $_FILES['file'] === ''
-) {
-  exit('paramError');
-}
+
+
+// 最新のfile_idを取得
+$sql = 'SELECT MAX(file_id) AS max_file_id FROM file_table';
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+$max_file_id = $result['max_file_id'];
+$file_id = $max_file_id + 1;
 
 // POSTデータの取得
 $file = $_FILES['file'];
@@ -23,13 +28,16 @@ $filetype = $file['type'];
 $filetmpname = $file['tmp_name'];
 $fileerror = $file['error'];
 $filesize = $file['size'];
-$No = $_SESSION['No'];
+$filevalue = $_POST['file_value'];
+
 
 // 名前をURLエンコードする
 $encodedName = urlencode($No);
 
 // 画像保存先のパスを設定
- $uploadFile = "data/file/file_{$encodedName}.pdf";
+ $uploadFile = "data/file/file_{$encodedName}_{$file_id}.pdf";
+
+$file_pass = $uploadFile;
 
 // ファイルのアップロード処理
 if (move_uploaded_file($filetmpname,$uploadFile)){
@@ -39,23 +47,20 @@ if (move_uploaded_file($filetmpname,$uploadFile)){
         };
 
 // SQL作成処理
-// $sql = 'UPDATE menber_list SET name = :name, department = :department, class = :class, skill = :skill, hobby = :hobby, photo= :photo, updated_at=now() WHERE No = :No';
-// $stmt = $pdo->prepare($sql);
-// $stmt->bindParam(':No', $No, PDO::PARAM_INT);
-// $stmt->bindParam(':name', $name, PDO::PARAM_STR);
-// $stmt->bindParam(':department', $department, PDO::PARAM_STR);
-// $stmt->bindParam(':class', $class, PDO::PARAM_STR);
-// $stmt->bindParam(':skill', $skill, PDO::PARAM_STR);
-// $stmt->bindParam(':hobby', $hobby, PDO::PARAM_STR);
-// $stmt->bindParam(':photo', $uploadFile, PDO::PARAM_STR);
+$sql = 'INSERT INTO file_table (user_id, file_id, file_pass, file_value , created_at) VALUES (:user_id, :file_id, :file_pass, :file_value , now())';
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+$stmt->bindParam(':file_id', $file_id, PDO::PARAM_INT);
+$stmt->bindParam(':file_pass', $file_pass, PDO::PARAM_STR);
+$stmt->bindParam(':file_value', $filevalue, PDO::PARAM_STR);
 
-// try {
-//   $stmt->execute();
-//   echo json_encode(["status" => "success"]);
-// } catch (PDOException $e) {
-//   echo json_encode(["sql error" => "{$e->getMessage()}"]);
-//   exit();
-// }
+try {
+  $stmt->execute();
+  echo json_encode(["status" => "success"]);
+} catch (PDOException $e) {
+  echo json_encode(["sql error" => "{$e->getMessage()}"]);
+  exit();
+}
 
 header("Location:menberlist.php");
 exit();

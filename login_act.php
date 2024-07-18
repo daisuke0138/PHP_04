@@ -27,6 +27,7 @@ try {
     $_SESSION['session_id'] = session_id();
     $_SESSION['No'] = $user['No'];
     $_SESSION['name'] = $user['name'];
+    $_SESSION['id'] = $user['id'];
     header('Location: menu.php');
     exit();
   } else {
